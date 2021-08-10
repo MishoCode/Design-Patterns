@@ -1,3 +1,5 @@
+package observer;
+
 public class FishingMagazineSubscriber extends Observer {
 
     public FishingMagazineSubscriber(Subject magazine, String observerName) {

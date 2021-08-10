@@ -1,3 +1,5 @@
+package observer;
+
 public class CarMagazineSubscriber extends Observer {
     public CarMagazineSubscriber(Subject magazine, String observerName) {
         this.observerName = observerName;
