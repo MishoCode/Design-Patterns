@@ -3,7 +3,7 @@ package proxy;
 public abstract class BaseParser implements Parser {
     private boolean isParsed = false;
     private int numberOfLines;
-    private String filename;
+    private final String filename;
 
     protected BaseParser(String filename) {
         this.filename = filename;
