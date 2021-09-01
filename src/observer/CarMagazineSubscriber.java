@@ -1,10 +1,9 @@
 package observer;
 
 public class CarMagazineSubscriber extends Observer {
+
     public CarMagazineSubscriber(Subject magazine, String observerName) {
-        this.observerName = observerName;
-        this.magazine = magazine;
-        this.magazine.register(this);
+        super(magazine, observerName);
     }
 
     @Override

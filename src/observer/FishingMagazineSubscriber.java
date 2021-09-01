@@ -3,9 +3,7 @@ package observer;
 public class FishingMagazineSubscriber extends Observer {
 
     public FishingMagazineSubscriber(Subject magazine, String observerName) {
-        this.observerName = observerName;
-        this.magazine = magazine;
-        this.magazine.register(this);
+        super(magazine, observerName);
     }
 
     @Override
