@@ -38,16 +38,16 @@ public class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age=" + age +
-                ", email='" + email + '\'' +
-                ", facebookAccount='" + facebookAccount + '\'' +
-                ", hasBachelorDegree=" + hasBachelorDegree +
-                '}';
+               "firstName='" + firstName + '\'' +
+               ", lastName='" + lastName + '\'' +
+               ", age=" + age +
+               ", email='" + email + '\'' +
+               ", facebookAccount='" + facebookAccount + '\'' +
+               ", hasBachelorDegree=" + hasBachelorDegree +
+               '}';
     }
 
-    private Person(PersonBuilder personBuilder){
+    private Person(PersonBuilder personBuilder) {
         this.firstName = personBuilder.firstName;
         this.lastName = personBuilder.lastName;
         this.age = personBuilder.age;
@@ -56,7 +56,11 @@ public class Person {
         this.hasBachelorDegree = personBuilder.hasBachelorDegree;
     }
 
-    public static class PersonBuilder{
+    public static PersonBuilder builder(String firstName, String lastName, int age) {
+        return new PersonBuilder(firstName, lastName, age);
+    }
+
+    public static class PersonBuilder {
         private String firstName;
         private String lastName;
         private int age;
@@ -71,22 +75,22 @@ public class Person {
             this.age = age;
         }
 
-        public PersonBuilder setEmail(String email){
+        public PersonBuilder setEmail(String email) {
             this.email = email;
             return this;
         }
 
-        public PersonBuilder setFacebookAccount(String facebookAccount){
+        public PersonBuilder setFacebookAccount(String facebookAccount) {
             this.facebookAccount = facebookAccount;
             return this;
         }
 
-        public PersonBuilder setHasBachelorDegree(boolean hasBachelorDegree){
+        public PersonBuilder setHasBachelorDegree(boolean hasBachelorDegree) {
             this.hasBachelorDegree = hasBachelorDegree;
             return this;
         }
 
-        public Person build(){
+        public Person build() {
             return new Person(this);
         }
     }
